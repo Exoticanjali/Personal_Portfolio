@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/d13d8aa1-116f-4f84-968d-8e21923c89d7
+**URL**: https://shimmer-glass-design.lovable.app
 
 
 
