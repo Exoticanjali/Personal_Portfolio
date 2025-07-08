@@ -38,6 +38,8 @@ const Index = () => {
       if (window.ScrollTrigger) {
         locomotiveScroll.on('scroll', window.ScrollTrigger.update);
         
+        const scrollContainer = document.querySelector('[data-scroll-container]') as HTMLElement;
+        
         window.ScrollTrigger.scrollerProxy('[data-scroll-container]', {
           scrollTop(value) {
             return arguments.length ? locomotiveScroll.scrollTo(value, 0, 0) : locomotiveScroll.scroll.instance.scroll.y;
@@ -45,7 +47,7 @@ const Index = () => {
           getBoundingClientRect() {
             return {top: 0, left: 0, width: window.innerWidth, height: window.innerHeight};
           },
-          pinType: document.querySelector('[data-scroll-container]').style.transform ? 'transform' : 'fixed'
+          pinType: scrollContainer?.style.transform ? 'transform' : 'fixed'
         });
 
         window.ScrollTrigger.addEventListener('refresh', () => locomotiveScroll.update());
